@@ -1,20 +1,44 @@
 import pandas as pd
 
-# Using year 2000 as the reference year
-
-
-df1 = pd.read_csv("Bisconti_2025_digitized_figure.csv")
-df2 = pd.read_csv("Table_8.1_Nuclear_Energy_Overview.csv")
-
-
-Bisconti_data =pd.read_csv("Bisconti_2025_digitized_figure.csv", usecols=['year', 'percent_favor','percent_oppose', 'percent_strongly_favor', 'percent_strongly_oppose'])
+# Read Bisconti sentiment data
+Bisconti_data = pd.read_csv(
+    "Bisconti_2025_digitized_figure.csv",
+    usecols=['year', 'percent_favor', 'percent_oppose',
+             'percent_strongly_favor', 'percent_strongly_oppose']
+)
 
 # Filter years 2000–2025
 Bisconti_data = Bisconti_data[
     (Bisconti_data['year'] >= 2000) & (Bisconti_data['year'] <= 2025)
-
 ]
+
 print(Bisconti_data.head())
+
+
+# Read nuclear energy data (NEI)
+NEI_data = pd.read_csv(
+    "Table_8.1_Nuclear_Energy_Overview.csv",
+    usecols=[
+        'Annual Total',
+        'Nuclear Generating Units, Total Operable Units',
+        'Nuclear Generating Units, Net Summer Capacity',
+        'Nuclear Electricity Net Generation',
+        'Nuclear Share of Electricity Net Generation',
+        'Nuclear Generating Units, Capacity Factor'
+    ]
+)
+NEI_data = NEI_data[pd.to_numeric(NEI_data['Annual Total'], errors='coerce').notna()]
+NEI_data['Annual Total'] = NEI_data['Annual Total'].astype(int)
+
+
+# Filter years 2000–2025
+NEI_data = NEI_data[
+    (NEI_data['Annual Total'] >= 2000) & 
+    (NEI_data['Annual Total'] <= 2025)
+]
+
+print(NEI_data.head())
+
 
 # Gallup Data
 "Gallup_Alternative_vs_NonRenewable.csv"
