@@ -1,13 +1,3 @@
-﻿U.S. Energy Information Administration,,,,,
-January 2026 Monthly Energy Review,,,,,
-,,,,,
-Note: Information about data precision.,,,,,
-,,,,,
-"Release Date: January 27, 2026",,,,,
-"Next Update: February 24, 2026",,,,,
-,,,,,
-Table 8.1 Nuclear Energy Overview,,,,,
-,,,,,
 Annual Total,"Nuclear Generating Units, Total Operable Units","Nuclear Generating Units, Net Summer Capacity",Nuclear Electricity Net Generation,Nuclear Share of Electricity Net Generation,"Nuclear Generating Units, Capacity Factor"
 ,(Number),(Million Kilowatts),(Million Kilowatthours),(Percent),(Percent)
 1957,1,0.055,10,0,Not Available
@@ -77,4 +67,5 @@ Annual Total,"Nuclear Generating Units, Total Operable Units","Nuclear Generatin
 2021,93,95.546,779645,19,92.8
 2022,92,94.659,771537,18.2,92.7
 2023,93,95.712,774873,18.5,93
+
 2024,94,96.82,781865,18.1,90.8
