@@ -91,7 +91,7 @@ energy_access_clean = energy_access[[
 uranium_price = uranium_price.rename(columns={'Delivery year': 'Year'})
 
 Bisconti_data = Bisconti_data.rename(columns={'year': 'Year'})
-Bisconti_data = Bisconti_data[(Bisconti_data['Year'] >= 2000) & (Bisconti_data['Year'] <= 2025)]
+#Bisconti_data = Bisconti_data[(Bisconti_data['Year'] >= 2000) & (Bisconti_data['Year'] <= 2025)]
 
 NEI_data = NEI_data[pd.to_numeric(NEI_data['Annual Total'], errors='coerce').notna()]
 NEI_data = NEI_data.rename(columns={'Annual Total': 'Year'})
