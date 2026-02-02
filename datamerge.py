@@ -3,6 +3,9 @@ import os
 from functools import reduce
 
 
+# Using year 2000 as the reference year
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
 def get_path(filename, subfolder=None):
     """
     Helper to get absolute path of a file.
