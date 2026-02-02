@@ -2,13 +2,6 @@ import pandas as pd
 import os
 from functools import reduce
 
-script_dir = os.path.dirname(os.path.abspath(__file__))
-
-df1 = pd.read_csv("Bisconti_2025_digitized_figure.csv")
-df2 = pd.read_csv("Table_8.1_Nuclear_Energy_Overview.csv")
-
-
-print(df1.head())
 
 def get_path(filename, subfolder=None):
     """
