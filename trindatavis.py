@@ -22,6 +22,14 @@ plt.show()
 
 # %%
 
+df.plot(x='Year', y='percent_favor', kind='line', title='Percent Favor Nuclear Energy in US Over Time')
+plt.ylabel('Percent Favor')
+plt.show()
+
+
+# %%
+
+
 df.plot(x='Year', y='Nuclear Share of Electricity Net Generation', kind='line', title='Nuclear Share of Electricity Generation Over Time')
 plt.ylabel('Nuclear Share (%)')
 plt.show()
@@ -43,3 +51,11 @@ plt.show()
 
 df  = df[(df['Year'] >= 1973) & (df['Year'] <= 2025)]
 # %%    
+df.plot(x='Year', y='percent_strongly_favor', kind='line', title='Percent Strongly Favor Nuclear Energy in US Over Time')
+plt.ylabel('Percent Strongly Favor')
+plt.show()
+
+# %%    
+df.plot(x='Year', y='percent_strongly_oppose', kind='line', title='Percent Strongly Oppose Nuclear Energy in US Over Time')
+plt.ylabel('Percent Strongly Oppose')
+plt.show()
