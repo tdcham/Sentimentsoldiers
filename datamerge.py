@@ -132,6 +132,6 @@ def merge_on_year(left, right):
 final_df = reduce(merge_on_year, dfs_to_merge)
 final_df = final_df.sort_values('Year').reset_index(drop=True)
 print(final_df.head())
-output_file = os.path.join(script_dir, "merged_nuclear_data.csv")
+output_file = os.path.join(script_dir, "initial_merged_nuclear_data.csv")
 final_df.to_csv(output_file, index=False)
 print(f"Saved to: {output_file}")
