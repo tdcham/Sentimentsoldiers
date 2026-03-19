@@ -3,7 +3,7 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv("merged_gallupvariables_otherdata.csv")
+df = pd.read_csv("dataset_binary_favor.csv")
 
 # Keep 2000 and later
 df = df[df["Year"] >= 2000].copy()
@@ -30,14 +30,18 @@ df = df.loc[:, df.nunique(dropna=True) > 1]
 corr_matrix = df.corr(numeric_only=True)
 
 #filter to only include correlations abive 0.5 or below -0.5, excluding the diagonal
-corr_matrix = corr_matrix.where((corr_matrix.abs() > 0.5) & (corr_matrix.abs() < 1.0))
 
 # correlation matrix with all variables vs nuclear favorabcolumns
 nuclear_corr_matrix = corr_matrix["percent_favor"].dropna().sort_values(ascending=False)
 print("Correlation matrix (filtered):")
-print(corr_matrix)
 
 
-nuclear_corr_matrix.to_csv("nuclear_favorability_correlation_matrix.csv")
+nuclear_corr_matrix.to_csv("nuclear_favorability_correlation_matrix_all.csv")
+
+corr_matrix = corr_matrix.where((corr_matrix.abs() > 0.5) & (corr_matrix.abs() < 1.0))
 
 
+nuclear_corr_matrix = corr_matrix["percent_favor"].dropna().sort_values(ascending=False)
+print("Correlation matrix (filtered):")
+
+nuclear_corr_matrix.to_csv("nuclear_favorability_correlation_matrix_stongest.csv")
